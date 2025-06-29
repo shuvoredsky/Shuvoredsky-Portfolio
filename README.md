@@ -1,12 +1,31 @@
-# React + Vite
+Welcome to ShuvoRedSky, my personal portfolio website built with modern web technologies. This site showcases my skills, projects, and experience as a Full Stack Web Developer.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔧 Tech Stack:
 
-Currently, two official plugins are available:
+Frontend: HTML, CSS, TailwindCSS, JavaScript, React.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Animation & UI: react-dist, React Icons, react-animation-cursor, framer-motion, sweetalert2, react-simple-typewriter
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Email Service: EmailJS
+
+Deployment: Vercel / Netlify
+
+🎯 Features:
+
+Interactive Hero Section with Text Animation
+
+Skills Display with Progress Bars and Icons
+
+Project Showcase with live and GitHub links
+
+Contact Form with EmailJS integration
+
+Dark/Light Theme Toggle
+
+Fully Responsive and Modern UI Design
+
+Smooth Scroll and Section Navigation
+
+🚀 Live Preview: [https://shuvoredsky.netlify.app/]
+📧 Contact: kumarshuvo265@gmail.com
