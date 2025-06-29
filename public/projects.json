@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "WhereIsIt",
+    "description": "A platform where users can report and find lost items by posting details and locations. Includes login, item posting, and community support.",
+    "features": [
+      "JWT Token Integration",
+      "CRUD Operations",
+      "Firebase Auth",
+      "Lottie Files"
+    ],
+    "tech": ["React", "Node.js", "Express.js", "MongoDB", "Firebase", "JWT"],
+    "image": "/images/whereisit.png",
+    "liveLink": "https://whereisit-a604a.web.app/",
+    "github": "https://github.com/shuvoredsky/whereIsIt-client"
+  },
+  {
+    "id": 2,
+    "title": "Garden Community",
+    "description": "A gardening knowledge-sharing website where users can post and view gardening tips. It encourages collaboration among gardeners.",
+    "features": [
+      "Sorting, Filtering",
+      "CRUD Operations",
+      "Dashboard System",
+      "Firebase Auth"
+    ],
+    "tech": ["React", "Firebase", "Tailwind", "Express.js", "MongoDB"],
+    "image": "/images/garden-community.png",
+    "liveLink": "https://garden-community-a8c0a.web.app/",
+    "github": "https://github.com/shuvoredsky/garden-community-client"
+  },
+  {
+    "id": 3,
+    "title": "EventExplorer",
+    "description": "A modern event booking web app where users can register, book seats, give feedback, and manage their profiles.",
+    "features": [
+      "Register and Login via Email or Google",
+      "Book Events or Appointments",
+      "Community Feedback System",
+      "Profile Update"
+    ],
+    "tech": ["javaScript", "React", "Firebase", "Tailwind CSS"],
+    "image": "/images/eventexplorer.png",
+    "liveLink": "https://jasminea9-7f5c2.web.app/",
+    "github": "https://github.com/yourusername/event-explorer"
+  }
+]
