@@ -41,7 +41,9 @@ const Hero = () => {
           passionate about clean code, teamwork, and continuous learning.
         </p>
 
-        <button className="btn btn-primary mt-2">Hire Me</button>
+        <button className="btn btn-primary mt-2">
+          <a href="#contact">Hire Me</a>
+        </button>
       </div>
 
       {/* Right Image Section */}
