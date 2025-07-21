@@ -1,6 +1,29 @@
 [
   {
     "id": 1,
+    "title": "MediCamp",
+    "description": "A comprehensive web application for managing medical camp registrations and participant tracking, enhancing healthcare event coordination.",
+    "features": [
+      "JWT authentication dashboard for users and organizers",
+      "Add and manage camp registrations with duplicate validation",
+      "Filter camps by location and status",
+      "Admin access for camp moderation and participant oversight"
+    ],
+    "tech": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Firebase",
+      "Tailwind CSS",
+      "Ant Design"
+    ],
+    "image": "/images/medicamp.png",
+    "liveLink": "https://assaignment-12-8d7d9.web.app/",
+    "github": "https://github.com/yourusername/medicamp"
+  },
+  {
+    "id": 2,
     "title": "WhereIsIt",
     "description": "A platform where users can report and find lost items by posting details and locations. Includes login, item posting, and community support.",
     "features": [
@@ -15,7 +38,7 @@
     "github": "https://github.com/shuvoredsky/whereIsIt-client"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "Garden Community",
     "description": "A gardening knowledge-sharing website where users can post and view gardening tips. It encourages collaboration among gardeners.",
     "features": [
@@ -30,7 +53,7 @@
     "github": "https://github.com/shuvoredsky/garden-community-client"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "EventExplorer",
     "description": "A modern event booking web app where users can register, book seats, give feedback, and manage their profiles.",
     "features": [

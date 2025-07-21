@@ -10,6 +10,7 @@ import {
 import whereisit from "../../../src/assets/whereisit.png";
 import garden from "../../../src/assets/garden.png";
 import event from "../../../src/assets/event.png";
+import medicamp from "../../../src/assets/Medicamp.png";
 
 const techIcons = {
   React: <FaReact className="text-sky-500" />,
@@ -31,6 +32,8 @@ const getImageByTitle = (title) => {
       return garden;
     case "EventExplorer":
       return event;
+    case "MediCamp":
+      return medicamp;
     default:
       return "";
   }
@@ -88,7 +91,7 @@ const ProjectCard = () => {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="flex items-center gap-1 badge badge-outline"
+                    className="flex items-center gap-1 badge badge-outline bg-slate-500 text-white"
                   >
                     {techIcons[tech] || null}
                     {tech}

@@ -76,14 +76,14 @@ const Skills = () => {
           My Skills
         </motion.h2>
 
-        <motion.p
+        {/* <motion.p
           className="text-base-content text-lg mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
           A glance at the technologies I use in my development stack.
-        </motion.p>
+        </motion.p> */}
 
         <div className="flex flex-wrap justify-center gap-8">
           {Object.entries(skillsData).map(([category, skills]) => (
