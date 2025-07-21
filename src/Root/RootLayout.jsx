@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../PortfolioComponents.jsx/Navbar";
 import Hero from "../PortfolioComponents.jsx/Hero";
-import SocialLink from "../PortfolioComponents.jsx/SocialLink";
 import About from "../PortfolioComponents.jsx/About";
 import Skills from "../PortfolioComponents.jsx/Skills";
 import Education from "../PortfolioComponents.jsx/Education";
@@ -29,7 +28,6 @@ const Root = () => {
       />
       <Navbar></Navbar>
       <Hero></Hero>
-      <SocialLink></SocialLink>
       <About></About>
       <Skills></Skills>
       <Projects></Projects>

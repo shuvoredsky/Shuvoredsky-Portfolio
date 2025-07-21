@@ -1,6 +1,7 @@
 import React from "react";
 import myImage from "../assets/hero.jpg";
 import { Typewriter } from "react-simple-typewriter";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -41,9 +42,44 @@ const Hero = () => {
           passionate about clean code, teamwork, and continuous learning.
         </p>
 
-        <button className="btn btn-primary mt-2">
-          <a href="#contact">Hire Me</a>
-        </button>
+        <div className="flex items-center gap-5">
+          <button className="btn btn-primary mt-2">
+            <a href="#contact">Hire Me</a>
+          </button>
+          <div className="flex justify-center gap-6 mt-2">
+            <a
+              href="https://github.com/shuvoredsky"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-circle btn-outline text-xl hover:btn-primary"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://linkedin.com/in/shuvoredsky"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-circle btn-outline text-xl hover:btn-primary"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="https://www.facebook.com/sk.shuvo.129794"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-circle btn-outline text-xl hover:btn-primary"
+              aria-label="Facebook"
+            >
+              <FaFacebook />
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Right Image Section */}

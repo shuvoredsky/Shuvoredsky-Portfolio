@@ -61,12 +61,7 @@ const Contact = () => {
                 <span className="font-medium">Phone:</span> 01732629543
               </span>
             </div>
-            <div className="flex items-center gap-3 text-lg">
-              <FaWhatsapp className="text-primary text-xl" />
-              <span>
-                <span className="font-medium">WhatsApp:</span> 01732629543
-              </span>
-            </div>
+
             <p className="mt-4 text-base">
               Feel free to reach out to me anytime — I’m always happy to
               connect!

@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React, { useEffect, useState } from "react";
 import {
   FaUser,
@@ -9,6 +8,7 @@ import {
   FaSun,
 } from "react-icons/fa";
 import ShinyText from "../PortfolioComponents.jsx/effect/ShinyText";
+import resume from "../assets/Resume of Shuvo-Chakrabarti (MERN Developer).pdf";
 
 const Navbar = () => {
   const [theme, setTheme] = useState("dark");
@@ -24,17 +24,17 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li className="lg:text-primary">
-        <a href="#about" className="flex items-center gap-1">
+        <a href="#about" className="flex items-center gap-1 text-primary">
           <FaUser /> About Me
         </a>
       </li>
       <li className="lg:text-primary">
-        <a href="#project" className="flex items-center gap-1">
+        <a href="#project" className="flex items-center gap-1 text-primary">
           <FaProjectDiagram /> Projects
         </a>
       </li>
       <li className="lg:text-primary">
-        <a href="#contact" className="flex items-center gap-1">
+        <a href="#contact" className="flex items-center gap-1 text-primary">
           <FaPhone /> Contact
         </a>
       </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
 
         {/* Mobile View Dropdown */}
         <div className="dropdown lg:hidden">
-          <label tabIndex={0} className="btn btn-circle btn-ghost text-white">
+          <label tabIndex={0} className="btn btn-circle btn-ghost text-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -78,20 +78,19 @@ const Navbar = () => {
           >
             {navLinks}
             <li>
-              <button onClick={toggleTheme} className="flex items-center gap-2">
-                {theme === "dark" ? (
-                  <FaSun />
-                ) : (
-                  <FaMoon className="text-black" />
-                )}
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 text-primary"
+              >
+                {theme === "dark" ? <FaSun /> : <FaMoon />}
                 {theme === "dark" ? "Light Mode" : "Dark Mode"}
               </button>
             </li>
             <li>
               <a
-                href="/resume.pdf"
+                href={resume}
                 download
-                className="flex items-center gap-2"
+                className="flex items-center gap-2 text-primary"
               >
                 <FaDownload /> Resume
               </a>
@@ -101,18 +100,14 @@ const Navbar = () => {
 
         {/* Desktop View */}
         <div className="hidden lg:flex gap-4 items-center">
-          <ul className="menu menu-horizontal gap-2 text-white">{navLinks}</ul>
+          <ul className="menu menu-horizontal gap-2">{navLinks}</ul>
           <button
             onClick={toggleTheme}
-            className="btn btn-sm btn-circle btn-outline text-white"
+            className="btn btn-sm btn-circle btn-outline text-primary"
           >
             {theme === "dark" ? <FaSun /> : <FaMoon />}
           </button>
-          <a
-            href="/resume.pdf"
-            download
-            className="btn btn-sm btn-primary gap-2"
-          >
+          <a href={resume} download className="btn btn-sm btn-primary gap-2">
             <FaDownload /> Resume
           </a>
         </div>
