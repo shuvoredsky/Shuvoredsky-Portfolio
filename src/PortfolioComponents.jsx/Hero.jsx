@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Left Text Section */}
       <div className="text-center md:text-left max-w-xl space-y-4 z-10">
         <h1 className="text-4xl md:text-5xl font-bold">
-          Hi, I’m <span className="text-primary">Shuvo Chakrabrati</span>
+          Hi, I’m <span className="text-primary">Shuvo Chakrabarti</span>
         </h1>
 
         <h2 className="text-xl md:text-2xl font-medium text-gray-600">
@@ -97,36 +97,51 @@ const Hero = () => {
           />
         </div>
 
-        {/* Rotating Logos */}
+        {/* Rotating Logos Container */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[300px] h-[300px] md:w-[360px] md:h-[360px] rounded-full animate-spin-slow relative">
+          <div className="w-52 h-52 md:w-64 md:h-64 rounded-full animate-rotate relative">
             {/* Top (Next.js) */}
             <img
               src={nextLogo}
               alt="Next.js"
-              className="w-10 h-10 absolute -top-6 left-1/2 -translate-x-1/2"
+              className="w-10 h-10 absolute top-[-40px] left-1/2 -translate-x-1/2"
             />
-            {/* Bottom (MongoDB) */}
+            {/* Right (MongoDB) */}
             <img
               src={mongoLogo}
               alt="MongoDB"
-              className="w-10 h-10 absolute -bottom-6 left-1/2 -translate-x-1/2"
+              className="w-10 h-10 absolute top-1/2 right-[-40px] -translate-y-1/2"
             />
-            {/* Left (Node.js) */}
+            {/* Bottom (Node.js) */}
             <img
               src={nodeLogo}
               alt="Node.js"
-              className="w-10 h-10 absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2"
+              className="w-10 h-10 absolute bottom-[-40px] left-1/2 -translate-x-1/2"
             />
-            {/* Right (Tailwind CSS) */}
+            {/* Left (Tailwind CSS) */}
             <img
               src={tailwindLogo}
               alt="Tailwind CSS"
-              className="w-10 h-10 absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2"
+              className="w-10 h-10 absolute top-1/2 left-[-40px] -translate-y-1/2"
             />
           </div>
         </div>
       </div>
+
+      {/* Inline CSS for custom animation */}
+      <style jsx>{`
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-rotate {
+          animation: rotate 20s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
