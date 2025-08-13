@@ -76,43 +76,55 @@ const Skills = () => {
           My Skills
         </motion.h2>
 
-        {/* <motion.p
-          className="text-base-content text-lg mb-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
-          A glance at the technologies I use in my development stack.
-        </motion.p> */}
+        <div className="space-y-12">
+          {Object.entries(skillsData).map(([category, skills]) => {
+            const direction = category === "Backend" ? -1 : 1;
+            const repeatedSkills = Array(15).fill(skills).flat();
 
-        <div className="flex flex-wrap justify-center gap-8">
-          {Object.entries(skillsData).map(([category, skills]) => (
-            <div key={category} className="w-full mb-8">
-              <h3 className="text-xl font-semibold text-primary mb-6 text-center">
-                {category}
-              </h3>
-              <div className="flex flex-wrap justify-center gap-8">
-                {skills.map((skill, idx) => (
-                  <div key={idx} className="flex flex-col items-center">
-                    <motion.div
-                      className="flex justify-center items-center w-24 h-24 rounded-lg bg-white cursor-pointer transition-all duration-300 border-2 border-slate-300"
-                      whileHover={{
-                        y: -10,
-                        scale: 1.05,
-                        boxShadow: "0px 0px 25px rgba(59,130,246,0.8)",
-                        backgroundColor: "rgba(59,130,246,0.1)",
-                      }}
-                    >
-                      {skill.icon}
-                    </motion.div>
-                    <span className="text-sm text-center mt-3">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+            const scrollDuration = category === "Backend" ? 50 : 30;
+
+            return (
+              <div key={category} className="relative overflow-hidden">
+                <h3 className="text-xl font-semibold text-primary mb-6 text-center">
+                  {category}
+                </h3>
+                <div className="flex overflow-hidden whitespace-nowrap">
+                  <motion.div
+                    className="flex"
+                    animate={{ x: direction > 0 ? -2000 : 2000 }}
+                    transition={{
+                      repeat: Infinity,
+                      repeatType: "loop",
+                      duration: scrollDuration,
+                      ease: "linear",
+                    }}
+                  >
+                    {repeatedSkills.map((skill, idx) => (
+                      <div
+                        key={idx}
+                        className="inline-flex flex-col items-center mx-4"
+                      >
+                        <motion.div
+                          className="flex justify-center items-center w-24 h-24 rounded-lg bg-white cursor-pointer border-2 border-slate-300"
+                          whileHover={{
+                            y: 2,
+                            scale: 1.05,
+                            boxShadow: "0px 0px 25px rgba(59,130,246,0.8)",
+                            backgroundColor: "rgba(59,130,246,0.1)",
+                          }}
+                        >
+                          {skill.icon}
+                        </motion.div>
+                        <span className="text-sm text-center mt-3">
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </motion.div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
