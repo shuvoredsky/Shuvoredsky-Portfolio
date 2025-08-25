@@ -4,8 +4,10 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  font-family: "IBM Plex Mono", monospace;
+}
 
-/* Custom animation for slow spinning */
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);

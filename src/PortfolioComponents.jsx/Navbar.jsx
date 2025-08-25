@@ -1,26 +1,8 @@
-import React, { useEffect, useState } from "react";
-import {
-  FaUser,
-  FaProjectDiagram,
-  FaPhone,
-  FaDownload,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
+import { FaUser, FaProjectDiagram, FaPhone, FaDownload } from "react-icons/fa";
 import ShinyText from "../PortfolioComponents.jsx/effect/ShinyText";
 import resume from "../assets/Resume of Shuvo-Chakrabarti (MERN Developer).pdf";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
-
   const navLinks = (
     <>
       <li className="lg:text-primary">
@@ -44,7 +26,6 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50">
       <div className="navbar mx-auto w-[60%] rounded-full px-4 py-2 backdrop-blur-md bg-opacity-50 shadow-md">
-        {/* Logo */}
         <div className="flex-1">
           <a
             href="#home"
@@ -54,7 +35,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile View Dropdown */}
         <div className="dropdown lg:hidden">
           <label tabIndex={0} className="btn btn-circle btn-ghost text-primary">
             <svg
@@ -77,15 +57,7 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3 right-2 z-[1] p-4 shadow bg-base-200 rounded-box w-52"
           >
             {navLinks}
-            <li>
-              <button
-                onClick={toggleTheme}
-                className="flex items-center gap-2 text-primary"
-              >
-                {theme === "dark" ? <FaSun /> : <FaMoon />}
-                {theme === "dark" ? "Light Mode" : "Dark Mode"}
-              </button>
-            </li>
+
             <li>
               <a
                 href={resume}
@@ -98,15 +70,9 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Desktop View */}
         <div className="hidden lg:flex gap-4 items-center">
           <ul className="menu menu-horizontal gap-2">{navLinks}</ul>
-          <button
-            onClick={toggleTheme}
-            className="btn btn-sm btn-circle btn-outline text-primary"
-          >
-            {theme === "dark" ? <FaSun /> : <FaMoon />}
-          </button>
+
           <a href={resume} download className="btn btn-sm btn-primary gap-2">
             <FaDownload /> Resume
           </a>

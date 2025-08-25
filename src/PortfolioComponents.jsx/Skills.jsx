@@ -17,6 +17,11 @@ import {
   SiVite,
   SiNextdotjs,
   SiVercel,
+  SiRedux,
+  SiTypescript,
+  SiPostgresql,
+  SiRender,
+  SiNetlify,
 } from "react-icons/si";
 
 const Skills = () => {
@@ -32,10 +37,17 @@ const Skills = () => {
         name: "JavaScript",
         icon: <FaJs className="text-yellow-400 text-5xl" />,
       },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="text-blue-600 text-5xl" />,
+      },
       { name: "React", icon: <FaReact className="text-sky-400 text-5xl" /> },
+      { name: "Redux", icon: <SiRedux className="text-purple-600 text-5xl" /> },
       {
         name: "Next.js",
-        icon: <SiNextdotjs className="text-black text-5xl" />,
+        icon: (
+          <SiNextdotjs className="text-gray-900 dark:text-white text-5xl" />
+        ),
       },
     ],
     Backend: [
@@ -45,11 +57,17 @@ const Skills = () => {
       },
       {
         name: "Express.js",
-        icon: <SiExpress className="text-gray-600 text-5xl" />,
+        icon: (
+          <SiExpress className="text-gray-700 dark:text-gray-300 text-5xl" />
+        ),
       },
       {
         name: "MongoDB",
         icon: <SiMongodb className="text-green-500 text-5xl" />,
+      },
+      {
+        name: "PostgreSQL",
+        icon: <SiPostgresql className="text-sky-700 text-5xl" />,
       },
     ],
     Tools: [
@@ -58,73 +76,65 @@ const Skills = () => {
         icon: <SiFirebase className="text-yellow-400 text-5xl" />,
       },
       { name: "Git", icon: <FaGitAlt className="text-red-500 text-5xl" /> },
-      { name: "GitHub", icon: <FaGithub className="text-black text-5xl" /> },
+      {
+        name: "GitHub",
+        icon: <FaGithub className="text-gray-900 dark:text-white text-5xl" />,
+      },
       { name: "Vite", icon: <SiVite className="text-purple-500 text-5xl" /> },
-      { name: "Vercel", icon: <SiVercel className="text-gray-500 text-5xl" /> },
+      {
+        name: "Vercel",
+        icon: (
+          <SiVercel className="text-gray-700 dark:text-gray-300 text-5xl" />
+        ),
+      },
+      { name: "Render", icon: <SiRender className="text-blue-400 text-5xl" /> },
+      {
+        name: "Netlify",
+        icon: <SiNetlify className="text-green-500 text-5xl" />,
+      },
     ],
   };
 
   return (
-    <section className="bg-base-100 py-12 px-4 md:px-10 lg:px-20">
+    <section className="bg-base-100 py-12 px-4 md:px-10 lg:px-20 transition-colors duration-300">
       <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          className="text-3xl font-bold text-primary mb-6"
-          initial={{ opacity: 0, y: -60 }}
+          className="text-3xl font-bold text-primary dark:text-blue-400 mb-12"
+          initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Skills
+          My Stack
         </motion.h2>
 
-        <div className="space-y-12">
-          {Object.entries(skillsData).map(([category, skills]) => {
-            const direction = category === "Backend" ? -1 : 1;
-            const repeatedSkills = Array(15).fill(skills).flat();
+        <div className="space-y-16">
+          {Object.entries(skillsData).map(([category, skills]) => (
+            <div key={category}>
+              <h3 className="text-2xl font-semibold text-primary dark:text-blue-300 mb-8 text-center">
+                {category}
+              </h3>
 
-            const scrollDuration = category === "Backend" ? 50 : 30;
-
-            return (
-              <div key={category} className="relative overflow-hidden">
-                <h3 className="text-xl font-semibold text-primary mb-6 text-center">
-                  {category}
-                </h3>
-                <div className="flex overflow-hidden whitespace-nowrap">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                {skills.map((skill, idx) => (
                   <motion.div
-                    className="flex"
-                    animate={{ x: direction > 0 ? -2000 : 2000 }}
-                    transition={{
-                      repeat: Infinity,
-                      repeatType: "loop",
-                      duration: scrollDuration,
-                      ease: "linear",
+                    key={idx}
+                    className="flex flex-col items-center p-4 rounded-lg shadow-md border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 cursor-pointer transition-colors duration-300"
+                    whileHover={{
+                      y: -4,
+                      scale: 1.08,
+                      boxShadow: "0px 0px 25px rgba(59,130,246,0.6)",
+                      backgroundColor: "rgba(59,130,246,0.05)",
                     }}
                   >
-                    {repeatedSkills.map((skill, idx) => (
-                      <div
-                        key={idx}
-                        className="inline-flex flex-col items-center mx-4"
-                      >
-                        <motion.div
-                          className="flex justify-center items-center w-24 h-24 rounded-lg bg-white cursor-pointer border-2 border-slate-300"
-                          whileHover={{
-                            y: 2,
-                            scale: 1.05,
-                            boxShadow: "0px 0px 25px rgba(59,130,246,0.8)",
-                            backgroundColor: "rgba(59,130,246,0.1)",
-                          }}
-                        >
-                          {skill.icon}
-                        </motion.div>
-                        <span className="text-sm text-center mt-3">
-                          {skill.name}
-                        </span>
-                      </div>
-                    ))}
+                    <div>{skill.icon}</div>
+                    <span className="text-sm font-medium mt-3 text-gray-900 dark:text-white">
+                      {skill.name}
+                    </span>
                   </motion.div>
-                </div>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>

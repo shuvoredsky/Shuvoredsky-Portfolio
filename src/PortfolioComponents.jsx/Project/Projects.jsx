@@ -6,7 +6,6 @@ const Projects = () => (
       Featured Projects
     </h2>
     <ProjectCard />
-    {/* Add more <ProjectCard /> if needed */}
   </section>
 );
 export default Projects;

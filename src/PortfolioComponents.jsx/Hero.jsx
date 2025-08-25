@@ -3,7 +3,6 @@ import myImage from "../assets/hero.jpg";
 import { Typewriter } from "react-simple-typewriter";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
-// Logo images (আপনি আপনার public/assets এ রাখতে পারেন)
 import nextLogo from "../assets/logos/NextjsLogo.png";
 import mongoLogo from "../assets/logos/MongoDBLogo.png";
 import nodeLogo from "../assets/logos/NodejsLogo.png";
@@ -13,12 +12,11 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col md:flex-row items-center justify-between p-6 md:p-12 bg-base-200 min-h-[70vh] overflow-hidden"
+      className="relative flex flex-col md:flex-row items-center justify-around md:p-12 bg-base-200 min-h-[70vh] overflow-hidden font-poppins"
     >
-      {/* Glow background */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-tr from-red-500/20 via-transparent to-blue-500/20 blur-3xl animate-pulse" />
+      <div className="absolute inset-0 z-0 blur-3xl animate-pulse" />
 
-      {/* Left Text Section */}
+      {/* Left Text */}
       <div className="text-center md:text-left max-w-xl space-y-4 z-10">
         <h1 className="text-4xl md:text-5xl font-bold">
           Hi, I’m <span className="text-primary">Shuvo Chakrabarti</span>
@@ -31,6 +29,7 @@ const Hero = () => {
               words={[
                 "Full Stack Developer",
                 "React Enthusiast",
+                "Next.js Developer",
                 "MERN Stack Coder",
                 "Tech Explorer",
                 "Problem Solver",
@@ -47,10 +46,11 @@ const Hero = () => {
 
         <p className="text-lg text-base-content">
           I build modern, scalable, and responsive web applications using
-          technologies like React, Node.js, MongoDB, and Firebase. I'm
+          technologies like Next.js, Postgresql, Node.js, Express.js .
           passionate about clean code, teamwork, and continuous learning.
         </p>
 
+        {/* Buttons + Social */}
         <div className="flex items-center gap-5">
           <button className="btn btn-primary mt-2">
             <a href="#contact">Hire Me</a>
@@ -97,28 +97,24 @@ const Hero = () => {
           />
         </div>
 
-        {/* Rotating Logos Container */}
+        {/* Rotating Logos */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-52 h-52 md:w-64 md:h-64 rounded-full animate-rotate relative">
-            {/* Top (Next.js) */}
             <img
               src={nextLogo}
               alt="Next.js"
               className="w-10 h-10 absolute top-[-40px] left-1/2 -translate-x-1/2"
             />
-            {/* Right (MongoDB) */}
             <img
               src={mongoLogo}
               alt="MongoDB"
               className="w-10 h-10 absolute top-1/2 right-[-40px] -translate-y-1/2"
             />
-            {/* Bottom (Node.js) */}
             <img
               src={nodeLogo}
               alt="Node.js"
               className="w-10 h-10 absolute bottom-[-40px] left-1/2 -translate-x-1/2"
             />
-            {/* Left (Tailwind CSS) */}
             <img
               src={tailwindLogo}
               alt="Tailwind CSS"
@@ -128,7 +124,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Inline CSS for custom animation */}
+      {/* Animation */}
       <style jsx>{`
         @keyframes rotate {
           0% {
